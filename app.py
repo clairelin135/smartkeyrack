@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
@@ -9,15 +9,13 @@ for k in keys:
 
 @app.route('/')
 def index():
-    str = ""
-    for k in keys:
-        str += k + " " + request_vals[k]
-    return '''<h1>{}</h1>'''.format(str)
+    return render_template('index.html', key1 = request_vals[keys[0]], key2 = request_vals[keys[1]], key3 = request_vals[keys[2]], key4 = request_vals[keys[3]])
 
 @app.route('/update')
 def update():
     for k in keys:
-        request_vals[k] = keys[k]
+        if request.args.get(k):
+            request_vals[k] = request.args.get(k)
 
 if __name__ == '__main__':
     app.run()

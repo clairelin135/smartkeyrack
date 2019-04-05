@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}"/>
+  </head>
+  <body>
+    <div class="mw6 center mt5">
+      <h1 class="tc">Who's Home?</h1>
+      <h2 class="tc">123 Main Street</h2>
+      <div class="tablerow bg-moon-gray">
+        <div class="resident pa2">
+          <h3 class="center">RESIDENT</h3>
+        </div>
+        <div class="at-home pa2">
+          <h3 class="center">AT HOME</h3>
+        </div>
+        <div class="not-at-home pa2">
+          <h3 class="center">NOT HOME</h3>
+        </div>
+      </div>
+      <div class="tablerow bg-light-gray mt3">
+        <div class="resident pa2">
+          <h4>{{key1}}{{key2}}{{key3}}{{key4}}</h4>
+        </div>
+        <div class="at-home pa2 bl br b--light-silver">
+          <h4>Yuh</h4>
+        </div>
+        <div class="not-at-home pa2">
+        </div>
+      </div>
+      <h4>John Doe is {{ key1 }}!</h4>
+    </div>
+  </body>
+</html>
