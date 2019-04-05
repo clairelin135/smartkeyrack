@@ -23,7 +23,7 @@ def update():
                 #firebase.put('/keys/' + k, val, {'print': 'silent'})
                 #firebase.put('/keys/' + k, val, {'print': 'silent'})
                 firebase.patch('/keys/', {k: val})
-        return 'lol'
+    return 'lol'
 
 if __name__ == '__main__':
     app.run()
