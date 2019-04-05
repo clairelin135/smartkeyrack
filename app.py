@@ -13,16 +13,17 @@ def index():
     key4 = keys['key4']
     return render_template('index.html', key1 = key1, key2 = key2, key3 = key3, key4 = key4)
 
-@app.route('/update')
+@app.route('/update', methods=['GET', 'POST'])
 def update():
-    keys = ['key1', 'key2', 'key3', 'key4']
-    for k in keys:
-        val = request.args.get(k)
-        if val:
-            #firebase.put('/keys/' + k, val, {'print': 'silent'})
-            #firebase.put('/keys/' + k, val, {'print': 'silent'})
-            firebase.patch('/keys/', {k: val})
-    return 'lol'
+    if request.method == 'POST':
+        keys = ['key1', 'key2', 'key3', 'key4']
+        for k in keys:
+            val = request.args.get(k)
+            if val:
+                #firebase.put('/keys/' + k, val, {'print': 'silent'})
+                #firebase.put('/keys/' + k, val, {'print': 'silent'})
+                firebase.patch('/keys/', {k: val})
+        return 'lol'
 
 if __name__ == '__main__':
     app.run()
