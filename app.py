@@ -15,6 +15,12 @@ def index():
 
 @app.route('/update', methods=['GET', 'POST'])
 def update():
+    if request.method == 'GET':
+        keys = ['key1', 'key2', 'key3', 'key4']
+        for k in keys:
+            val = request.args.get(k)
+            if val:
+                firebase.patch('/keys/', {k: val})
     if request.method == 'POST':
         keys = ['key1', 'key2', 'key3', 'key4']
         for k in keys:
