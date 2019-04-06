@@ -40,7 +40,7 @@ h2 {
 h3 {
   font-family: 'Heebo', sans-serif;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 13px;
   color: #FFFFFF;
   letter-spacing: 3px;
   margin: 0;
@@ -63,14 +63,18 @@ h4 {
 .resident {
   display: flex;
   flex: 3;
+  flex-direction: row;
+  align-items: center;
 }
 
 .at-home {
   display: flex;
   flex: 1;
+  align-items: stretch;
 }
 
 .not-at-home {
   display: flex;
   flex: 1;
+  align-items: stretch;
 }
