@@ -24,11 +24,19 @@
           <img class="profile w3 h3 br-100 mr3" src="../static/img/claire.png"/>
           <h4>Claire Lin</h4>
         </div>
-        <div class="b-light-silver bl br at-home pa2">
-          <h4>{{key1}}</h4>
+        <div class="b--light-silver bl br at-home pa2">
+          <div class="icon-wrapper">
+            {% if key1 == "home" %}
+            <img class = "profile w2 h2 br-100" src="../static/img/greencheck.png"/>
+            {% endif %}
+          </div>
         </div>
         <div class="not-at-home pa2">
-          <h4>{{key1}}</h4>
+          <div class="icon-wrapper">
+            {% if key1 == "not home" %}
+            <img class = "profile w2 h2 br-100" src="../static/img/x.png"/>
+            {% endif %}
+          </div>
         </div>
       </div>
       <div class="tablerow bg-light-gray mt2">
@@ -36,11 +44,19 @@
           <img class="profile w3 h3 br-100 mr3" src="../static/img/theo.png"/>
           <h4>Theo Shiao</h4>
         </div>
-        <div class="b-light-silver bl br at-home pa2">
-          <h4>{{key2}}</h4>
+        <div class="b--light-silver bl br at-home pa2">
+          <div class="icon-wrapper">
+            {% if key2 == "home" %}
+            <img class = "profile w2 h2 br-100" src="../static/img/greencheck.png"/>
+            {% endif %}
+          </div>
         </div>
         <div class="not-at-home pa2">
-          <h4>{{key2}}</h4>
+          <div class="icon-wrapper">
+            {% if key2 == "not home" %}
+            <img class = "profile w2 h2 br-100" src="../static/img/x.png"/>
+            {% endif %}
+          </div>
         </div>
       </div>
       <div class="tablerow bg-light-gray mt2">
@@ -48,11 +64,19 @@
           <img class="profile w3 h3 br-100 mr3" src="../static/img/margaret.jpg"/>
           <h4>Margaret Liu</h4>
         </div>
-        <div class="b-light-silver bl br at-home pa2">
-          <h4>{{key3}}</h4>
+        <div class="b--light-silver bl br at-home pa2">
+          <div class="icon-wrapper">
+            {% if key3 == "home" %}
+            <img class = "profile w2 h2 br-100" src="../static/img/greencheck.png"/>
+            {% endif %}
+          </div>
         </div>
         <div class="not-at-home pa2">
-          <h4>{{key3}}</h4>
+          <div class="icon-wrapper">
+            {% if key3 == "not home" %}
+            <img class = "profile w2 h2 br-100" src="../static/img/x.png"/>
+            {% endif %}
+          </div>
         </div>
       </div>
       <div class="tablerow bg-light-gray mt2">
@@ -60,11 +84,19 @@
           <img class="profile w3 h3 br-100 mr3" src="../static/img/hao.jpg"/>
           <h4>Hao Peng</h4>
         </div>
-        <div class="b-light-silver bl br at-home pa2">
-          <h4>{{key4}}</h4>
+        <div class="b--light-silver bl br at-home pa2">
+          <div class="icon-wrapper">
+            {% if key4 == "home" %}
+            <img class = "profile w2 h2 br-100" src="../static/img/greencheck.png"/>
+            {% endif %}
+          </div>
         </div>
         <div class="not-at-home pa2">
-          <h4>{{key4}}</h4>
+          <div class="icon-wrapper">
+            {% if key4 == "not home" %}
+            <img class = "profile w2 h2 br-100" src="../static/img/x.png"/>
+            {% endif %}
+          </div>
         </div>
       </div>
     </div>

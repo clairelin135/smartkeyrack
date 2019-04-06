@@ -11,6 +11,7 @@ def index():
     key2 = keys['key2']
     key3 = keys['key3']
     key4 = keys['key4']
+
     return render_template('index.html', key1 = key1, key2 = key2, key3 = key3, key4 = key4)
 
 @app.route('/update', methods=['POST'])
