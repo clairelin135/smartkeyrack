@@ -6,7 +6,10 @@ from firebase import firebase
 import eventlet
 eventlet.monkey_patch()
 '''
-
+'''
+import gevent.monkey
+gevent.monkey.patch_all()
+'''
 app = Flask(__name__)
 socketio = SocketIO(app, logger=True, engineio_logger=True)
 firebase = firebase.FirebaseApplication('https://smartkeyrack.firebaseio.com/', None)
@@ -24,13 +27,21 @@ key_statuses = {
 keys = ['key1', 'key2', 'key3', 'key4']
 key_statuses = firebase.get('/keys', None)
 
+clients = []
+
 @app.route('/')
 def index():
     return render_template('index.html', **key_statuses)
 
-@socketio.on('connect')
-def on_connect():
-    pass
+@socketio.on('connected')
+def connected():
+    print('connected' + request.namespace)
+    clients.append(request.namespace)
+
+@socketio.on('disconnect')
+def disconnect():
+    print('disconnected' + request.namespace)
+    clients.remove(request.namespace)
 
 @app.route('/update', methods=['POST'])
 def update():
@@ -45,8 +56,9 @@ def update():
         payload = {
             'hi': 'hello'
         }
+        # for i in range(len(clients)):
+        #     clients[i].emit('render keys', payload)
         socketio.emit('render keys', payload)
-        socketio.sleep(0)
     return "None"
 
 if __name__ == '__main__':
