@@ -6,6 +6,7 @@ firebase = firebase.FirebaseApplication('https://smartkeyrack.firebaseio.com/', 
 
 @app.route('/')
 def index():
+    #functions.database.ref().onUpdate()
     keys = firebase.get('/keys', None)
     key1 = keys['key1']
     key2 = keys['key2']
