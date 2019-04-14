@@ -3,81 +3,6 @@
   <head>
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}"/>
-    <!--<script src="https://code.jquery.com/jquery-3.3.1.js"></script>-->
-    <!--<script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>-->
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>-->
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-    <script type="text/javascript" charset="utf-8">
-        $(document).ready(function(){
-          var socket = io.connect();
-
-          socket.on('connect', function() {
-            console.log("connected!")
-            socket.emit('connected')
-          })
-
-          socket.on('render keys', function(payload) {
-            console.log(payload)
-            console.log("hello")
-            for (var key in payload) {
-              $('div#'+key).empty()
-              if (payload[key]['status'] === 'home') {
-                $('div#'+key).append('<img class = "profile w2 h2 br-100" src="../static/img/greencheck.png"/>')
-              }
-            }
-          });
-            /*
-            var socket = io.connect();
-
-            socket.on('connect', function() {
-              console.log("connected!")
-              socket.emit('connected')
-            })
-
-            socket.on('render keys', function(payload) {
-              console.log(payload)
-              console.log("hello")
-              for (var key in payload) {
-                $('div#'+key).empty()
-                if (payload[key]['status'] === 'home') {
-                  $('div#'+key).append('<img class = "profile w2 h2 br-100" src="../static/img/greencheck.png"/>')
-                }
-              }
-            });
-            */
-
-            /*
-            var socket = io.connect();
-
-            socket.on('connect', function() {
-              console.log('Websocket connected!');
-            });
-            */
-
-
-            //var socket = io.connect();
-            /*
-            socket.on('connect', function() {
-                socket.emit('connect');
-            });
-            */
-
-            /*
-            socket.on('render keys', function(payload) {
-              console.log(payload)
-              console.log("hello")
-              for (var key in payload) {
-                $('div#'+key).empty()
-                if (payload[key]['status'] === 'home') {
-                  $('div#'+key).append('<img class = "profile w2 h2 br-100" src="../static/img/greencheck.png"/>')
-                }
-              }
-            });
-            */
-
-        });
-    </script>
   </head>
   <body>
     <div class="mw6 center mt5">
@@ -97,60 +22,80 @@
       <div class="tablerow bg-light-gray mt2">
         <div class="resident pa3">
           <img class="profile w3 h3 br-100 mr3" src="../static/img/claire.jpg"/>
-          <h4>{{key1['name']}}</h4>
+          <h4>Claire Lin</h4>
         </div>
         <div class="b--light-silver bl br at-home pa2">
           <div class="icon-wrapper">
+            {% if key1 == "home" %}
+            <img class = "profile w2 h2 br-100" src="../static/img/greencheck.png"/>
+            {% endif %}
           </div>
         </div>
         <div class="not-at-home pa2">
           <div class="icon-wrapper">
+            {% if key1 == "not home" %}
             <img class = "profile w2 h2 br-100" src="../static/img/x.png"/>
+            {% endif %}
           </div>
         </div>
       </div>
       <div class="tablerow bg-light-gray mt2">
         <div class="resident pa3">
-          <img class="profile w3 h3 br-100 mr3" src="../static/img/michelle.jpg"/>
-          <h4>{{key2['name']}}</h4>
+          <img class="profile w3 h3 br-100 mr3" src="../static/img/theo.jpeg"/>
+          <h4>Theo Shiao</h4>
         </div>
         <div class="b--light-silver bl br at-home pa2">
           <div class="icon-wrapper">
+            {% if key2 == "home" %}
+            <img class = "profile w2 h2 br-100" src="../static/img/greencheck.png"/>
+            {% endif %}
           </div>
         </div>
         <div class="not-at-home pa2">
           <div class="icon-wrapper">
+            {% if key2 == "not home" %}
             <img class = "profile w2 h2 br-100" src="../static/img/x.png"/>
+            {% endif %}
           </div>
         </div>
       </div>
       <div class="tablerow bg-light-gray mt2">
         <div class="resident pa3">
-          <img class="profile w3 h3 br-100 mr3" src="../static/img/sarvesh.jpg"/>
-          <h4>{{key3['name']}}</h4>
+          <img class="profile w3 h3 br-100 mr3" src="../static/img/margaret.jpeg"/>
+          <h4>Margaret Liu</h4>
         </div>
         <div class="b--light-silver bl br at-home pa2">
           <div class="icon-wrapper">
+            {% if key3 == "home" %}
+            <img class = "profile w2 h2 br-100" src="../static/img/greencheck.png"/>
+            {% endif %}
           </div>
         </div>
         <div class="not-at-home pa2">
           <div class="icon-wrapper">
+            {% if key3 == "not home" %}
             <img class = "profile w2 h2 br-100" src="../static/img/x.png"/>
+            {% endif %}
           </div>
         </div>
       </div>
       <div class="tablerow bg-light-gray mt2">
         <div class="resident pa3">
-          <img class="profile w3 h3 br-100 mr3" src="../static/img/daniel.jpg"/>
-          <h4>{{key4['name']}}</h4>
+          <img class="profile w3 h3 br-100 mr3" src="../static/img/hao.png"/>
+          <h4>Hao Peng</h4>
         </div>
         <div class="b--light-silver bl br at-home pa2">
           <div class="icon-wrapper">
+            {% if key4 == "home" %}
+            <img class = "profile w2 h2 br-100" src="../static/img/greencheck.png"/>
+            {% endif %}
           </div>
         </div>
         <div class="not-at-home pa2">
           <div class="icon-wrapper">
+            {% if key4 == "not home" %}
             <img class = "profile w2 h2 br-100" src="../static/img/x.png"/>
+            {% endif %}
           </div>
         </div>
       </div>
