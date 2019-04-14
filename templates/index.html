@@ -20,12 +20,14 @@
           socket.on('render keys', function(payload) {
             console.log(payload)
             console.log("hello")
+            /*
             for (var key in payload) {
               $('div#'+key).empty()
               if (payload[key]['status'] === 'home') {
                 $('div#'+key).append('<img class = "profile w2 h2 br-100" src="../static/img/greencheck.png"/>')
               }
             }
+            */
           });
             /*
             var socket = io.connect();

@@ -6,10 +6,9 @@ from firebase import firebase
 import eventlet
 eventlet.monkey_patch()
 '''
-'''
-import gevent.monkey
-gevent.monkey.patch_all()
-'''
+from gevent.pywsgi import WSGIServer
+from gevent import monkey
+
 app = Flask(__name__)
 socketio = SocketIO(app, logger=True, engineio_logger=True)
 firebase = firebase.FirebaseApplication('https://smartkeyrack.firebaseio.com/', None)
