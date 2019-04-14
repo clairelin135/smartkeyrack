@@ -1,4 +1,104 @@
 <!DOCTYPE html>
 <html>
-<p> edit page </p>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}"/>
+  </head>
+  <body>
+    <div class="mw6 center mt5">
+      <h1 class="tc">Who's Home?</h1>
+      <h2 class="tc">123 Main Street</h2>
+      <div class="tablerow bg-moon-gray mt3">
+        <div class="resident pa2">
+          <h3 class="center">RESIDENT</h3>
+        </div>
+        <div class="at-home pa2">
+          <h3 class="center">HOME</h3>
+        </div>
+        <div class="not-at-home pa2">
+          <h3 class="center">NOT HOME</h3>
+        </div>
+      </div>
+      <div class="tablerow bg-light-gray mt2">
+        <div class="resident pa3">
+          <img class="profile w3 h3 br-100 mr3" src="../static/img/claire.jpg"/>
+          <h4>Claire Lin</h4>
+        </div>
+        <div class="b--light-silver bl br at-home pa2">
+          <div class="icon-wrapper">
+            {% if key1 == "home" %}
+            <img class = "profile w2 h2 br-100" src="../static/img/greencheck.png"/>
+            {% endif %}
+          </div>
+        </div>
+        <div class="not-at-home pa2">
+          <div class="icon-wrapper">
+            {% if key1 == "not home" %}
+            <img class = "profile w2 h2 br-100" src="../static/img/x.png"/>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="tablerow bg-light-gray mt2">
+        <div class="resident pa3">
+          <img class="profile w3 h3 br-100 mr3" src="../static/img/theo.jpeg"/>
+          <h4>Theo Shiao</h4>
+        </div>
+        <div class="b--light-silver bl br at-home pa2">
+          <div class="icon-wrapper">
+            {% if key2 == "home" %}
+            <img class = "profile w2 h2 br-100" src="../static/img/greencheck.png"/>
+            {% endif %}
+          </div>
+        </div>
+        <div class="not-at-home pa2">
+          <div class="icon-wrapper">
+            {% if key2 == "not home" %}
+            <img class = "profile w2 h2 br-100" src="../static/img/x.png"/>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="tablerow bg-light-gray mt2">
+        <div class="resident pa3">
+          <img class="profile w3 h3 br-100 mr3" src="../static/img/margaret.jpeg"/>
+          <h4>Margaret Liu</h4>
+        </div>
+        <div class="b--light-silver bl br at-home pa2">
+          <div class="icon-wrapper">
+            {% if key3 == "home" %}
+            <img class = "profile w2 h2 br-100" src="../static/img/greencheck.png"/>
+            {% endif %}
+          </div>
+        </div>
+        <div class="not-at-home pa2">
+          <div class="icon-wrapper">
+            {% if key3 == "not home" %}
+            <img class = "profile w2 h2 br-100" src="../static/img/x.png"/>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="tablerow bg-light-gray mt2">
+        <div class="resident pa3">
+          <img class="profile w3 h3 br-100 mr3" src="../static/img/hao.png"/>
+          <h4>Hao Peng</h4>
+        </div>
+        <div class="b--light-silver bl br at-home pa2">
+          <div class="icon-wrapper">
+            {% if key4 == "home" %}
+            <img class = "profile w2 h2 br-100" src="../static/img/greencheck.png"/>
+            {% endif %}
+          </div>
+        </div>
+        <div class="not-at-home pa2">
+          <div class="icon-wrapper">
+            {% if key4 == "not home" %}
+            <img class = "profile w2 h2 br-100" src="../static/img/x.png"/>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
