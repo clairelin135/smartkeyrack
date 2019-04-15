@@ -24,7 +24,7 @@ html, body, div, span, applet, object, iframe,
 h1 {
   font-family: 'Heebo', sans-serif;
   font-weight: 700;
-  color: #A1E062;
+  color: #3B78D8;
   font-size: 36px;
   margin: 0;
 }
@@ -54,6 +54,20 @@ h4 {
   margin: 0;
 }
 
+h5 {
+  font-family: 'Heebo', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.container {
+  width: 800px;
+}
+
 .tablerow {
   display: flex;
   flex-direction: row;
@@ -62,9 +76,20 @@ h4 {
 
 .resident {
   display: flex;
-  flex: 3;
+  flex: 1;
+  align-items: stretch;
+  flex-direction: row;
+}
+
+.resident-header {
+  display: flex;
   flex-direction: row;
   align-items: center;
+  flex: 3;
+}
+
+.icon {
+  flex: 1;
 }
 
 .at-home {
@@ -82,4 +107,24 @@ h4 {
   flex: 1;
   justify-content: center;
   align-items: center;
+}
+
+.number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+}
+
+.button {
+  background-color: #3B78D8;
+  display: inline-block;
+}
+
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  justify-content: flex-end;
 }
