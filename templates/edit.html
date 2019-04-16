@@ -5,64 +5,68 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}"/>
   </head>
   <body>
-    <div class="mw6 center mt5">
+    <div class="container center mt6">
       <h1 class="tc">Who's Home?</h1>
       <h2 class="tc">123 Main Street</h2>
-      <div class="tablerow bg-moon-gray mt3">
-        <div class="resident pa2">
-          <h3 class="center">RESIDENT</h3>
+      <div class="tablerow mt2">
+        <div class="resident bg-light-gray mr2">
+          <div class="resident-header pa3">
+            <div class="number bg-moon-gray br-100 mr3">
+              <h1>1</h1>
+            </div>
+            <div class="edit-name">
+              <h4>Name:</h4>
+              <form id="edit" action="/submit" method="post">
+                <input type="text" name="key1" value="{{key1['name']}}"/>
+              <form>
+            </div>
+          </div>
         </div>
-        <div class="at-home pa2">
-          <h3 class="center">HOME</h3>
-        </div>
-      </div>
-      <div class="tablerow bg-light-gray mt2">
-        <div class="resident pa3">
-          <img class="profile w3 h3 br-100 mr3" src="../static/img/claire.jpg"/>
-          <form id="edit" action="/submit" method="post"> Name: <input type="text" name="key1"> <form>
-        </div>
-        <div class="b--light-silver bl at-home pa2">
-          <div class="icon-wrapper">
-            <img class = "profile w2 h2 br-100" src="../static/img/greencheck.png"/>
+        <div class="resident bg-light-gray mr2">
+          <div class="resident-header pa3">
+            <div class="number bg-moon-gray br-100 mr3">
+              <h1>2</h1>
+            </div>
+            <div class="edit-name">
+              <h4>Name:</h4>
+              <form id="edit" action="/submit" method="post">
+                <input type="text" name="key2" value="{{key2['name']}}"/>
+              <form>
+            </div>
           </div>
         </div>
       </div>
-      <div class="tablerow bg-light-gray mt2">
-        <div class="resident pa3">
-          <img class="profile w3 h3 br-100 mr3" src="../static/img/theo.jpeg"/>
-          <form id="edit" action="/submit" method="post"> Name: <input type="text" name="key2"> <form>
-        </div>
-        <div class="b--light-silver bl at-home pa2">
-          <div class="icon-wrapper">
-            <img class = "profile w2 h2 br-100" src="../static/img/greencheck.png"/>
+      <div class="tablerow mt3">
+        <div class="resident bg-light-gray mr2">
+          <div class="resident-header pa3">
+            <div class="number bg-moon-gray br-100 mr3">
+              <h1>3</h1>
+            </div>
+            <div class="edit-name">
+              <h4>Name:</h4>
+              <form id="edit" action="/submit" method="post">
+                <input type="text" name="key3" value="{{key3['name']}}"/>
+              <form>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="tablerow bg-light-gray mt2">
-        <div class="resident pa3">
-          <img class="profile w3 h3 br-100 mr3" src="../static/img/margaret.jpeg"/>
-          <form id="edit" action="/submit" method="post"> Name: <input type="text" name="key3"> <form>
-        </div>
-        <div class="b--light-silver bl at-home pa2">
-          <div class="icon-wrapper">
-            <img class = "profile w2 h2 br-100" src="../static/img/greencheck.png"/>
-          </div>
-        </div>
-      </div>
-      <div class="tablerow bg-light-gray mt2">
-        <div class="resident pa3">
-          <img class="profile w3 h3 br-100 mr3" src="../static/img/hao.png"/>
-          <form id="edit" action="/submit" method="post"> Name: <input type="text" name="key4"> <form>
-        </div>
-        <div class="b--light-silver bl at-home pa2">
-          <div class="icon-wrapper">
-            <img class = "profile w2 h2 br-100" src="../static/img/greencheck.png"/>
+        <div class="resident bg-light-gray mr2">
+          <div class="resident-header pa3">
+            <div class="number bg-moon-gray br-100 mr3">
+              <h1>4</h1>
+            </div>
+            <div class="edit-name">
+              <h4>Name:</h4>
+              <form id="edit" action="/submit" method="post">
+                <input type="text" name="key4" value="{{key4['name']}}"/>
+              <form>
+            </div>
           </div>
         </div>
       </div>
       <div>
         <center>
-        <input type="submit" name="submit" value="Submit" form="edit" />
+        <input class="button pa2 mt3" type="submit" name="submit" value="Submit" form="edit" />
         </center>
       </div>
     </div>

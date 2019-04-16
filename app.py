@@ -15,7 +15,12 @@ def index():
 
 @app.route('/edit')
 def edit():
-    return render_template('edit.html')
+    keys = firebase.get('/keys', None)
+    key1 = keys['key1']
+    key2 = keys['key2']
+    key3 = keys['key3']
+    key4 = keys['key4']
+    return render_template('edit.html', key1=key1, key2=key2, key3=key3, key4=key4)
 
 @app.route('/submit', methods=['POST'])
 def submit():
