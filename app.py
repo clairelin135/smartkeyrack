@@ -45,13 +45,24 @@ def submit():
 
 @app.route('/update', methods=['POST'])
 def update():
+    keys = firebase.get('/keys', None)
+    key_statuses = {
+        'key1': keys['key1'],
+        'key2': keys['key2'],
+        'key3': keys['key3'],
+        'key4': keys['key4']
+    }
     req_data = request.json
     if request.method == 'POST':
         keys = ['key1', 'key2', 'key3', 'key4']
         for k in keys:
             val = req_data.get(k, None)
             if val:
-                firebase.patch('/keys/', {k: val})
+                payload = {
+                    'name': key_statuses[k]['name'],
+                    'status': val
+                }
+                firebase.patch('/keys/', {k: payload})
     return req_data or "None"
 
 if __name__ == '__main__':
